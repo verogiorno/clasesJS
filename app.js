@@ -153,7 +153,26 @@ switch(mensaje){                                    //es este ejemplo de condici
 
 //Estructura Repetitiva While (mientras) => se va a ejecutar/repetir hasta que algo se cumpla. El funcionamiento de While permite verificar la condición. Si la condición es T se va a ejecutar/repetir hasta que la condición de F y ahí es cuando el programa termina.
 
-while(condicion){
+// var x = 1
+// while(x<=10){
+// console.log(x)
+// }
 
+//Una Estructura Repetitiva While necesita sí o sí o contador para que no se quede en un bucle/loop infinito como en el caso de arriva que siempre que x sea menor o igual a 10 la condición se va a repetir infinitamente (lo que ocasiona que se te cuelgue la PC)
+//Un CONTADOR es un tipo especial de variable que se incrementa o decrementa con valores constantes durante la ejecución de ese programa. EL CONTADOR nos indica en cada momento la cantidad de valores impresos.
+
+
+var x = 1
+while(x<=10){
+    console.log(x)
+    x = x + 1
 }
+ 
+//La operación va a ser T y se va a repetir hasta que x = 11
 
+
+var x = 1
+while(x<=10){
+    console.log(`Hola Buenos dias: Esta es la vuelta ${x}`)
+    x = x + 1
+}
