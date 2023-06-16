@@ -3,8 +3,6 @@
 // Palabra reservada (son palabras que solo las puede usar el lenguage) ej: var, let, const
 // "Asignar" a la variable
 
-
-
 //Variables (espacios de memoria donde se guardan elementos)
 var palabras= "hola soy string" //siempre entre comillas
 console.log(palabras) //cuando el programa esta funcional, el console.log se elimina. Se usa para revisar las variables
@@ -21,7 +19,6 @@ var numero1 =5
 var numero2 =10
 resultado=numero1+numero2
 console.log(resultado)
-
 
 /* Operadores relacionales
 
@@ -118,7 +115,7 @@ console.log (`el alumno esta aprobado`)
 var mensaje = 'dog'
 
 if(mensaje == 'cat'){
-console.log(`la traduccion es MACRI`)
+console.log(`la traduccion es GATO`)
 }else{
     if(mensaje=='table'){
         console.log(`la traducion es MESA`)
@@ -176,3 +173,6 @@ while(x<=10){
     console.log(`Hola Buenos dias: Esta es la vuelta ${x}`)
     x = x + 1
 }
+
+// CLASE 9
+
