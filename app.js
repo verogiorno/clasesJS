@@ -34,7 +34,7 @@ console.log(resultado)
 
 //estructura condicional simple
 
-//condicion (compuesta x 3 elemtos: Variable, operador relacional, variable o valor)
+//Condición (compuesta x 3 elemtos: Variable, operador relacional, variable o valor)
 
 //Estructura condicional simple
 var edadpermitidopasar = 19
@@ -175,4 +175,138 @@ while(x<=10){
 }
 
 // CLASE 9
+//Estructura Repetitiva For (es como una versión simplificada del while)
+//(se emplea en aquellas situaciones en las que sabemos la cantidad de veces que queremos que se ejecute)
+//se compone: "for ()" dentro del for hay 3 etapas inciialización, condición y el incremento/decremento
 
+//Condición: compuesta x una variable, Operador relacional, y otra varieble o un tipo de valor
+
+//For Tradicional recorre un array compelto de punta a punta pero además le podes marcar desde que posición arrancar y hasta cual posición leer
+for(var i = 1; i<=10;i=i+1){
+console.log(i)
+}
+
+
+//i++ es lo mismo que hacer i=i+1 pero simplificado
+
+//Scope es el alcanze de variables (hasta donde pueden llegar las variables)
+
+//En JS tenemos 3 tipos de variables
+//var, let y const (ves Daniel, que const es variable, sonso)
+//En JS se dejó de usar var y se usa let
+//Const = constante (es una variable que no varía ej: const pi =3.14 el valor de las constantes NO se puede cambair)
+
+
+//Arrays
+
+// let miarray=[20, 96, 1, 'm', 'booleanos', true, false, 22222, [45, 'buenos dias']]
+// console.log(miarray)
+
+//Al array le podemos poner infinidades de elementos, incluso puede haber un array dentro de otro
+
+//posiciones: Para JS, el primer ítem de un array está en la posición 0 (índices). Para abrir una posición en particular hacermos lo siguiente:
+console.log(miarray[0])
+
+//Cuando se necesita recorrer/iterar un array para así inspeccioanr cada elemento, lo que hay que hacer es recorrerlo con un WHILE o un FOR
+let miarray=[20, 96, 1, 'hola mundo', 'm', true]
+
+i=0 
+while(i<6){
+    console.log(miarray[i])
+    i++
+}
+
+//dowhile (vino después del while. Ya no se usa)
+
+//for (el for es una actualización del while. El while ya no se utiliza)
+
+for(let j=0;j<6;j++){
+    console.log(miarray[j])
+}
+
+let objetos=[20, 96, 1, 'hola mundo', 'm', true]
+
+//FOR OF recorre un array compelto de punta a punta (es otra actualización de JS)
+//dentro del for va la variable let + el nombre de la variale en singular + of + nombre de la variable en plural
+
+for(let objeto of objetos){
+    console.log(objeto)
+}
+
+//Propiedades en JS
+//LENGTH
+
+// let mensaje= 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate quaerat corporis maxime reiciendis commodi, ullam provident fuga ipsa dolorem sapiente quibusdam modi placeat ut, obcaecati, quam a quod inventore aspernatur.'
+
+// let cantidad= mensaje.length
+//     console.log(cantidad)
+//muestra la cantidad de caracteres, en este caso= 231
+
+let cantidad=miaray.length
+//muestra la cantidad de elemntos, en este caso= 6
+
+
+//Objetos clases JS
+//Método
+//variable.nombreeningles()
+let fecha=new Date()
+
+    console.log(`la hora actual es: 
+    ${fehca.getHours()}: ${fecha.getMinutes()}: ${fecha.getSeconds()}`)
+
+    console.log(`${fecha.getDate()} / ${fecha.getMonth()+1} / ${fecha.getFullYear()}`)
+
+// Al getMonth se le agrega +1 porque la posición de Enero (el primer mes de l año) es 0 y al agregarle el +1 se arregla ese problema
+
+console.log(`${fecha.getDay()}`)
+//Lo mismo ocurre con getDate que muestra los días de la semana. Domingo estaría en la posición 0 al ser el primer día de la semana
+
+
+//Objeto o clase Math (matemáticas)
+//hay que darle un valor numérico
+
+// let valor = Math.floor(2.7)
+// console.log(valor)
+//Math.floor redondea para abajo en este caso sería 2
+
+// let valor = Math.round(2.7)
+// console.log(valor)
+//Math.round redondea hacia el entero más cercano en este caso sería 3 
+
+//let valor = Math.random() //Al no colocar nada entre los parentésis te un número random entre 0 y 1
+// console.log(valor) 
+
+// let valor = Math.random()*15 //al agregarle el *15 me va a tirar un núnero entre el 0 y el 15 
+// console.log(valor)
+
+// let valor = Math.random()*15(1) //Al agregarle el (1) esto te da un numero del 1 al 15
+
+let valor = Math.random()*15
+let resultado= Math.round(valor)
+console.log(resultado)
+//Esto hace que se redondee ese valor random que va desde el 0 al 15
+
+let valorfinal=Math.round(Math.random()*15) //forma correcta de hacer lo mismo que arriba
+
+let mensaje= 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate quaerat corporis maxime reiciendis commodi, ullam provident fuga ipsa dolorem sapiente quibusdam modi placeat ut, obcaecati, quam a quod inventore aspernatur.'
+
+let resultado=mensaje.charAt(25)
+console.log(resultado)
+//Te muestra la posición de caracter que en este caso es la t de la palabra amet
+
+
+let resultado=mensaje.substring(2)
+console.log(resultado)
+//Te sustrae los caracteres, en este caso en la consola te muestra desde 'rem ipsum dolor...' ya que arranca desde la posición 2. Sustrajo desde la posición 0-2 
+
+let resultado=mensaje.substring(2,9)
+console.log(resultado)
+//Se puede colocar dos valores que corresónded a la posición inicial y la posición final. En esta caso, en la consola se visualiza 'rem ips'
+
+let resultado=mensaje.indexOf('Lorem')
+console.log(resultado)
+//Te muestra la posición donde se encuentra la palabra
+
+let resultado=mensaje.toUpperCase()
+console.log(resultado)
+//Te muestra todas las minúsculas en mayúscula y .toLowerCase te muestra todas las mayús en minúsculas
