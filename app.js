@@ -498,7 +498,7 @@ console.log(esVocal('v')) */
 
 //Definí una función multiplicar que reciba como argumentos un número multiplicador y un array de números, y que devuelva un array donde cada elemento es el resultado del elemento del primer array (en la misma posición) multiplicado por el número ingresado.
 
-const multiplicar =(multiplicador, numeros)=>{
+/*const multiplicar =(multiplicador, numeros)=>{
     let total = []
     //total.push(85, 9, 25, 'hola mundo', true, false, (95+2)) //lo que yo coloque en los () se va a agregar al array
     //console.log(total)
@@ -511,4 +511,140 @@ const multiplicar =(multiplicador, numeros)=>{
 }
 
 
-console.log(multiplicar(2,[5, 7, 15, 22, 40, 50]))
+console.log(multiplicar(2,[5, 7, 15, 22, 40, 50]))*/
+
+//CLASES 11 Y 12 fuern sobre la pagina web, donde el profesor nos mostró como hace el diseño html y css de una landing page
+
+
+
+
+//CLASE 13
+
+//OBJETOS LITERALES (tipos de datos. EL Objeto Literal está compuesto por el nombre de la variable ={ aca van las propiedades y los valores de ese objeto } para seguir agregando mas propiedades y valores, hay que agregar una coma) Se puede tener un objeto dentro de otro objeto
+
+// let auto={
+//     marca:'Toyota',
+//     año: 2016,
+//     modelo: 'Etios',
+//     estado: true,
+//     dueños: ['Julio', 'Esteban', 'Maria'],
+//     otrosAutos:{
+//         marca: 'Toyota',
+//         año: '2020',
+//         modelo: 'Corolla',
+//         estado: true,
+//     }
+// }
+// console.log(auto.dueños[2])
+
+//ARRAY DE OBJETOS
+
+/*let personas =[{
+    nombre: 'Pepe',
+    apellido: 'Lopez',
+    edad: 25,
+},{
+    nombre: 'Javier',
+    apellido: 'Lopez',
+    edad: 30,
+},{
+    nombre: 'Maria',
+    apellido: 'Lopez',
+    edad: 20,
+},{
+    nombre: 'Julio',
+    apellido: 'Lopez',
+    edad: 95,
+}]
+console.log(personas[1].nombre)
+
+for (let persona of personas){
+    console.log(persona.nombre)
+}*/
+
+
+
+//DOM = DOCUMENT OBJECT MODEL
+
+/*let cuerpo = document.getElementById('cuerpo')
+cuerpo.style.backgroundColor='aqua'
+
+let mensaje= document.getElementById('mensaje')
+let fechaHoy= '30/5/2023'
+
+let otroMensaje= 'bienvenidos a mi página' //para que este mensaje aparezca hay q hacer lo siguiente
+mensaje.innerHTML=otroMensaje
+//agregar al ^html
+
+mensaje.innerHTML=`${otroMensaje} <span class="fecha"> ${fechaHoy}</span>`*/
+
+
+
+
+//EVENTOS (ya no se usa en JS pero sí se usa en REACT)
+
+// let mensaje= document.querySelector('.ocultar')
+// //El query selector es un metodo que permite seleccionar clases, etiquetas y IDs (sería con # en vez del . en el caso de una ID)
+// let mensaje1='hola soy una variable global'
+// const mostrar = (parametro) => {
+// // console.log(mensaje1)
+// let mensaje2('hola soy una variable local')
+// }
+// console.log(mensaje2)
+//Cuando creamos una variable dentro de una función (local), no puede salir de esa función. Esto quiere decir que por fuera de la función no es reconocida.
+
+//podemos usar esto para el MENU HAMBURGUESA!!!
+/*let mensaje= document.querySelector('.ocultar')
+let btn= document.getElementById('btn')
+const mostrar = (parametro) => {
+    if (mensaje.style.display ==='block'){
+        mensaje.style.display='none'
+    }else{
+        mensaje.style.display='block'
+    }
+    
+}
+            //parametro1     //parametro2
+            //eventos         //función
+            //(como el    
+            //onclick)   
+btn.addEventListener('click', mostrar)*/
+
+//El profe vuelve a explicar bien esto en: 1.32.20
+
+//versión resumida
+
+//los 3 pilares de JS: declaración de variables, funcines y ventos
+
+//Declaración de variables
+/*let mensaje= document.querySelector('.ocultar')
+let etiqueta=document.querySelector('h2')
+let btn= document.getElementById('btn')
+//funciones
+const mostrar = (parametro) => {
+etiqueta.classList.toggle('ocultar')
+    
+}
+//eventos 
+btn.addEventListener('click', mostrar) */
+
+
+//funciones: nombradas, flecha, funciones anónimas
+
+//Las FUNCIONES ANÓNIMAS no tienen nombre. Se utilizan según algunos criterios. Si esa funcion que vamos autilizar no tiene muchas lienas de código, podemos usar una funcion anon.
+//Las funciones anon se usan en los eventos y en los metodos avanzados
+// se colocan en el segundo parametro del addEventListener ()=>{}
+
+let mensaje= document.querySelector('.ocultar')
+let etiqueta=document.querySelector('h2')
+let btn= document.getElementById('btn')
+btn.addEventListener('click', ()=>{
+    etiqueta.classList.toggle('ocultar')
+})
+
+
+
+//CLASE 14 fue una clase de ejercitación
+
+
+//CLASE 15
