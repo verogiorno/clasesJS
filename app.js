@@ -635,12 +635,12 @@ btn.addEventListener('click', mostrar) */
 //Las funciones anon se usan en los eventos y en los metodos avanzados
 // se colocan en el segundo parametro del addEventListener ()=>{}
 
-let mensaje= document.querySelector('.ocultar')
+/*let mensaje= document.querySelector('.ocultar')
 let etiqueta=document.querySelector('h2')
 let btn= document.getElementById('btn')
 btn.addEventListener('click', ()=>{
     etiqueta.classList.toggle('ocultar')
-})
+})*/
 
 
 
@@ -648,3 +648,58 @@ btn.addEventListener('click', ()=>{
 
 
 //CLASE 15
+//En la primer parte de la clase resolvieron algunos de los ejercicios que pasó el profe por el gdocs
+
+/*#12f8e6
+Números Hexadecimal:Están cmpuestos por letras y nuúmeros con una capacidad de 6. Esta combinación de letras y números me da un color.
+Los números hexaedcimales van desde el 0 hasta el 9
+La a=10, b=11, c=12, d=13, e=14, f=15
+*/
+
+//Declaración de variables
+/*let cuerpo = document.getElementById('cuerpo')
+let btn = document.getElementById('btn')
+let codigoColor = document.getElementById('codigoColor')
+let codigos=['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'a', 'b', 'c', 'd', 'e', 'f']
+
+//Funciones
+const colorRandom=()=>{
+    return Math.round(Math.random()*15)
+}
+
+const cambiarColor = ()=>{
+    let codigoColorFinal= '#'
+    for(let i=0;i<6;i++){
+        //codigoColorFinal=codigoColorFinal+codigos[colorRandom()]
+        codigoColorFinal+=codigos[colorRandom()]
+    }
+    cuerpo.style.backgroundColor=codigoColorFinal
+    codigoColor.innerHTML=codigoColorFinal
+}
+
+//eventos
+btn.addEventListener('click', cambiarColor)*/
+
+
+
+/*let btn=document.getElementById('cambiarColor')
+let cuerpo=document.querySelector('body')
+
+const cambiar=()=>{
+    cuerpo.classList.toggle('modoOscuro')
+
+}
+
+btn.addEventListener('click', cambiar)*/
+
+// CLASE 16
+
+
+
+
+//CLASE 17 fue una clase de ejercitación
+
+
+
+
+//CLASE 18 APIS

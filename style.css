@@ -5,3 +5,20 @@
 .ocultar{
     display: none;
 }
+
+body{
+padding: 25px;
+line-height: 1.5;
+background-color: white;
+color: black;
+font-size: 25px;
+}
+
+.modoOscuro{
+    background-color: #272727;
+    color: white;
+}
+
+button{
+    padding: 10px 35px;
+}
