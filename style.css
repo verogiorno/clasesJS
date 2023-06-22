@@ -2,7 +2,7 @@
     color: blue;
 } */
 
-.ocultar{
+/* .ocultar{
     display: none;
 }
 
@@ -21,4 +21,28 @@ font-size: 25px;
 
 button{
     padding: 10px 35px;
+} */
+
+
+/* CLASE 19
+.col1{
+    background-color: paleturquoise;
+    text-align: center;
 }
+
+.col2{
+    background-color: violet;
+    text-align: right;
+}
+
+.col3{
+    background-color: bisque;
+}
+
+.col4{
+    background-color: palegreen;
+}
+
+.btnTest{
+background-color: blueviolet;
+} */

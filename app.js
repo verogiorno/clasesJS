@@ -699,7 +699,54 @@ btn.addEventListener('click', cambiar)*/
 
 //CLASE 17 fue una clase de ejercitación
 
-
-
-
 //CLASE 18 APIS
+
+
+//CLASE 19
+
+//CLASE 19
+
+/*Framework => es una herramienta que tiene clases que ya estan armadas con ciertos criterios. Nosotros podemos utilizarlas y nos facilita ahorrar muchísimo tiempo. EL que vamos a ver es el de Boostrap pero hay muchos más.
+
+Un framework es una estructura o plantilla que los programadores utilizan en su día a día para desarrollar un software, crear una app, etc de manera más rápida
+
+Un framework es un esquema o marco de trabajo que ofrece una estructura base para elaborar un proyecto con objetivos específicos, una especie de plantilla que sirve como punto de partida para la organización y desarrollo de software.
+
+CDN tiene un link que llama al servidor de Boostrap. Hago referencia al link, nada más.
+
+Boostrap (https://getbootstrap.com/docs/5.3/getting-started/introduction/) tiene un estilo propio, se puede modificar pero nunca desde el archivo original.
+
+La clase container ya viene seteada para que se centren los elementos y viene con un ancho deetrminado para que siempre se respeten los margenes
+
+
+Para cambiar el CSS de Boostrap lo que hay que hacer es agregarle otra clase al elemento. EJ: si tenemos <div class="col"></div> hacemos un espacio y le agregamos otra clase => <div class="col otraClase"></div>. Después, vamos al style.css y llamamos a la clase y la modificamos como siempre hicimos.
+
+Bosotrap está programado para tener un max de 12 columnas. Si tengo 1 columna sola, va aa ocupar todo el espacio de la pantalla. Pero si tengo más de 1, se va repartiendo el espacio equitativamente. Si quisiera tener más de 12 columnas, tengo que hacerle cambios a la clase xq sino, las columnas que sobran se salen del ancho de la pantalla =>
+
+Si a la clase col le agregamos un -1 (o sea, <div class="col-1"></div>) esa columna me va a ocupar el espacio de 1 (o el numero que elija ponerle entre 1-12) columna.
+
+Hay 32 Frameworks
+Otro Framework que podemos usar es BULMA https://bulma.io/documentation/
+
+https://blog.nubecolectiva.com/los-5-mejores-frameworks-css-para-desarrolladores-en-2020/ (otros frameworks)
+*/
+
+//Ver como agregar más paquetes a PACKAGE.JSON
+//NO SE RECOMIENDA EDITAR NADA DE PACKAGE.LOCK.JSON HASTA TENER 5 AÑOS DE PROGRAMACIÓN
+//No se recomienda tocar la carpeta node_modules tampoco
+
+
+//.gitignore
+
+/* ejemplo:
+
+# dependencies
+/node_modules
+/.pnp         
+.pnp.js
+*/
+
+//La / hace referencia a las carpetas y los . hacen referencia a los archivos. Lo que hace es que esos archivos/carpetas no se suban al github
+
+
+//BORRAR CARPETAS QUE NO NECESITAMOS video: 2.07.10
