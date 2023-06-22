@@ -183,7 +183,7 @@
 
 // //Condición: compuesta x una variable, Operador relacional, y otra varieble o un tipo de valor
 
-// //For Tradicional recorre un array compelto de punta a punta pero además le podes marcar desde que posición arrancar y hasta cual posición leer
+// //For Tradicional recorre un array compelto de punta a punta y saca los elementos del array (los separa) Además le podes marcar desde que posición arrancar y hasta cual posición leer
 // for(var i = 1; i<=10;i=i+1){
 // console.log(i)
 // }
@@ -242,7 +242,7 @@
 
 // // let cantidad= mensaje.length
 // //     console.log(cantidad)
-// //muestra la cantidad de caracteres, en este caso= 231
+// //muestra la cantidad de caracteres (cuenta los espacios y los símbolos *.,$) en este caso= 231
 
 // let cantidad=miaray.length
 // //muestra la cantidad de elemntos, en este caso= 6
@@ -690,11 +690,160 @@ const cambiar=()=>{
 
 }
 
-btn.addEventListener('click', cambiar)*/
+btn.addEventListener('click', cambiarColor)*/
+
+
+
 
 // CLASE 16
 
+//Métodos avanzados
+// let miarray=[1,2,5,9,6]
+// let resultado=miarray.map(elemento =>elemento*9)
+//     console.log(resultado) [9, 18, 45, 81, 54]
+    //console.log(miarray)
 
+/*for(let numero of miarray){
+    console.log(numero)
+}*/
+
+/*
+El .map() tiene 3 características
+1. Recorre el array
+2. Crea un nuevo array
+3. Modifica cada uno de los elementos
+La diferencia entre el For (recorre todo el array y saca c/u de sus elementos) y el .map^
+Sí o sí, lo que se haga con el .map() hay que guardarlo en una variable
+*/
+
+// let resultadodos=miarray.filter(elemento=>elemento>5)
+// console.log(resultadodos) [9,6]
+/*
+El .filter() tiene 3 características
+1. Recorre el array
+2. Crea un nuevo array
+3. Filtra en base a una condición (ej: filtra el arrayy creando uno nuevo donde sólo se encuentran los números >5: 9, 6)
+*/
+
+// let resultadotres=miarray.find(elemento=>elemento>6)
+// console.log(resultadotres) 9
+/*
+El .find() tiene 3 características
+1. Puede recorrer el array pero
+2. No crea un array nuevo
+3. Devuelve el valor del priemr elemento del array que cumpla con la condición (ej: encuentra el primer número que sea >6: 9)
+*/
+
+// let resultadocuatro=miarray.some(elemento=>elemento==5)
+// console.log(resultadocuatro) true
+/*
+El .some()
+1. Recorre el array
+2. No crea un nuevo array
+3. Comprueba si hay al menos un elemento del array que cumpla la condición(en el array hay un núemro que es ==5 por ende, el .some() nos devuelve el booleano true)
+*/
+
+// let resultadocinco=miarray.every(elemento=>elemento>=10)
+// console.log(resultadocinco) false
+/*
+El .every()
+1. Recorre el array
+2. No crea un nuevo array
+3. Determina si TODOS los elementos del array satisfacen la condición (si todos los numeros del array son >=10, recién ahí me daría true)
+*/
+
+// miarray.forEach(elemento=>console.log(elemento))
+// console.log(miarray) [1],[2],[5],[9],[6]
+/*
+El .forEach()
+1. Recorre c/u de los elementos del array
+2. Extrae c/u de los elementos del array
+3. Es como el for of y el for tradicional 
+*/
+
+
+// const frases =['Labore sea dolor.', 'Justo rebum dolor.', 'Stet lorem amet.'];
+
+// const longitud=(parametro)=>{
+// return frases.map(elemento=>elemento.length)
+// }
+
+// console.log(longitud(frases)) [17, 18, 16]
+
+//FORMULARIOS
+
+// const numero1=document.getElementById('numeroa')
+// const numero2=document.getElementById('numerob')
+// const btn=document.getElementById('resultados')
+// const resultado=document.getElementById('resultado')
+
+// const ejecutar=() =>{
+//     let resultadoFinal=Number(numero1.value)+Number(numero2.value)
+//     resultado.innerHTML=resultadoFinal
+// }
+
+// btn.addEventListener('click', ejecutar)
+
+// const nombre=document.getElementById('nombre')
+// const email=document.getElementById('email')
+// const btn=document.getElementById('btn')
+
+// function validarFormulario(){
+//     let datonombre=nombre.value
+//     let datoemail=email.value
+//     if(datonombre===''){
+//         alert('No ingresó su nombre')
+//         return false
+//     } if(datoemail===''){
+//         alert('No ingresó su email')
+//         return false
+//     }else{
+//         alert('Los datos se enviaron correctamente')
+//     }
+// }
+// btn.addEventListener('click', validarFormulario)
+
+
+//REGETS o EXPRESIONES REGULARES
+//Es una técnica que nos permite identificar si un string coincide con un patrón determinado (por ejemplo saber si un email está correctamente escrito)
+//Un email = comienza con caracteres alfanuméricos +  @ + caracteres alfanuméricos + . + caracteres alfabéticos
+//Sin los reget, podemos hacer lo mismo mediante  una serie de IFs que procesa los strings para comprobar si cumple la regla (super tedioso)
+//Las expresiones regulares se agregan entre las / / y sirve solo para string
+
+
+// const nombre=document.getElementById('nombre')
+// const email=document.getElementById('email')
+// const btn=document.getElementById('btn')
+
+
+// let datoNombre=nombre.value
+// let datoemail=email.value
+
+// let patron=/^[a-z]+$/
+// if(patron.test(datoNombre)){
+//     console.log('verdadero')
+// }else{
+//     console.log('falso')
+// }
+
+// btn.addEventListener('click', validarFormulario)
+
+//El patron se ejecuta y si cumple la condición se ejecuta. (Hay a-z en este mensaje? Sí, hay es true. Sino es false)
+//El ^ sirve para ver si la cadena de string comienza con lo que viene despues del sombrerito (simpre va x fuera de los [])
+//El $ sirve para ver si termina con lo que viene antes del $
+//Entre {x} verifica si contiene x cantidad de dígitos. Ej: let patron=/0-9{3}/. Si le agrego una , ej: let patron=/0-9{3,}/ significa que contiene 3 o más dígitos
+//En cuanto a EMAILS agregarle al final /.com/$ para que termine en .com sí o sí
+//Para signos sería: /[\+\-\*\/\\]/
+
+// /^[\+\-\*\/][A-Z]{2}[0-9]{3}[A-Z]{2}$/ 
+
+//tambien podemos invertir la condición para que no se pueda usar lo que sea que esté entre / /. ej: 
+// let patron=/^[a-z]+$/
+// if(!patron.test(datoNombre)){
+//     console.log('verdadero')
+// }else{
+//     console.log('falso')
+// }
 
 
 //CLASE 17 fue una clase de ejercitación
