@@ -850,8 +850,145 @@ El .forEach()
 
 //CLASE 18 APIS
 
+/*APIS: Application Programming Interface
+Son un conjunto de reglas y protocolos que permiten que diferentes aplicaciones se comuniquen entre sí y compartan datos.
+API actúa como un intermediario que permite que dos programas o sistemas intercambien informacipon. EJ: https://project-static-assets.s3.amazonaws.com/APISpreadsheets/APIMemes/ServersCooksExample.jpeg
+Nosotros (porgramadores FrontEnd) seríamos los clientes sentados. Los mozos (apis) vienen y nos dan una carta. De esa carta, nosotros elegimos los elemnetos que queremos consumir. Una vez que elegimos lo que queremos consumir, le decimos a la API. La API va hacia la cocina (lo que es el programa de BackEnd) y vuelve con lo pedido hacia nuestras mesas.
 
-//CLASE 19
+Hay 2 tipos de APIs:
+
+1. API Estática (API común. => Algo que ya está quieto, que ya está agregado ej: La info de la API)
+El profe nos muestra la API de Rick & Morty que nos da info sobre los personajes (img, nombre, estado: vivo/muerto, especie, último lugar en el que estuvo y la primera vez en la que fue visto). Se actualiza cuando sale un nueva temporada y se actualiza la info de los pjs (una vez x año)
+
+2. API Dinámica: cambia constantemente, cada segundo, cada minuto, cada hora, cada mes. EJ: Whether API
+
+Todas las APIs son diferentes. Hay que leer la documentación de todas!
+
+Info específica de la API se llama ENDPOINT (location, status, etc)
+La base url tiene una petición.
+Las APIs tienen peticiones: GET(obtener), POST(enviar/modificar), PUT(acutualizar), DELETE (eliminar)
+La única opción que tenemos habilitada es la de GET en las APIs estáticas y dinámicas (aunque hay APIs en las que tenemos abilitadas las 4 opciones. EJ: Las que hacemos nosotros)
+
+//JSON
+{
+    'marca':'toyota',
+    'modelo': 'Etios',
+    'año': 2022,
+    'dueños': ['Pedro','Maria'],
+    'nuevo': true,
+}
+
+//Objeto literal
+const auto={
+    marca:'Toyota',
+    modelo: 'Etios',
+    año: 2022,
+    dueños: ['Pedro','Maria'],
+    nuevo: true,
+}
+
+JSON (JavaScript Object Notation): Formato ligero de intercambio de datos. Se utiliza para representar información estructurada de manera legible tanto para nosotros como para las computadoras. En este caso, la conexión es la API, y el envío de info es a través de JSON.
+JSON es ampliamente utilizado en aplicaciones web y servicios de APIs ya que es facilmente legible y es compatible con la mayoría de los lenguajes de programación. Se utiliza apra intercambio de datos entre diferentes sistemas.
+
+JS no reconoce JSON, reconoce el objeto literal.
+*/
+
+//Función FETCH => sirve para traer información, realizar peticiones GET
+//Fetch viene con métodos propios ej: .then(): y entonces
+
+// fetch('https://rickandmortyapi.com/api/character')
+// .then(respuesta=>console.log(respuesta)) //para checkear que todo funciona ok
+
+
+//Asincronismo (VERLO NOSOTROS)
+//console.log('hola')
+let page=1
+fetch(`https://rickandmortyapi.com/api/character?page=${page}`)
+.then(respuesta=>respuesta.json()) //lo que la API trae de JASON, con el método .json me lo convierte a objeto
+.then(datos=>console.log(datos.results)) //te muestra objeto x objeto del array
+//console.log('adios')
+
+//Resultado en consola: Hola
+                        //Adios
+                        //Array
+//Es Asincronico xq no espera a que el fetch traiga la info y sigue leyendo la lina de abajo
+
+
+/*
+Hay APIs públicas y privadas
+Las privadas tienen restricciones de acceso, necesitan una key. No podemos obtener tda la info completa. Requieren autorizaciones y tienen limitaciones en las peticiones. Algunas te cobran por petición (en dolar). Esto está definido en la documentación.
+
+*/
+
+let lista= document.getElementById('lista')
+let anterior=document.getElementById('anterior')
+let siguiente=document.getElementById('siguiente')
+
+
+const obtenerPersonajes = (page) => {
+    console.log(page)
+fetch(`https://rickandmortyapi.com/api/character/?page=${page}`)
+.then(respuesta=>respuesta.json())
+.then(datos=>mostrarPersonaje(datos.results))
+} //si lo guardo en una función, la ejecuto y controlo la ejecuciónd e la función como quiero
+obtenerPersonajes(page)
+
+const mostrarPersonaje = (personajes) => {
+    //console.log(personajes)
+    lista.innerHTML=''
+    let resultado=''
+    for(let personaje of personajes){
+        //console.log(personaje.name)
+        if (personaje.status=== 'Alive'){
+            resultado= `<span class="alive">${personaje.status}</span>`
+        }else if(personaje.status=== 'Dead'){
+            resultado= `<span class="dead">${personaje.status}</span>`
+        }else{
+            resultado= `<span class="unknown">${personaje.status}</span>`
+        }
+
+
+        lista.innerHTML+=`<div class="card mb-3" style="max-width: 540px;">
+        <div class="row g-0">
+          <div class="col-md-4">
+            <img src="${personaje.image}" class="img-fluid rounded-start" alt="...">
+          </div>
+          <div class="col-md-8">
+            <div class="card-body">
+              <h5 class="card-title">${personaje.name}</h5>
+
+              <p class="card-text"><b>Estado:</b> ${resultado} </p>
+
+              <p class="card-text"><b>Especie:</b> ${personaje.species} </p>
+              <p class="card-text"><b>Género:</b> ${personaje.gender} </p>
+            </div>
+          </div>
+        </div>
+      </div>`
+    }
+}
+
+const nueva = () =>{
+page++
+obtenerPersonajes(page)
+console.log('perdiste 1 dolar')
+}
+                //BASE               ENDPOINT   //condición
+// "https://rickandmortyapi.com/api/character/?page=2"
+
+const antes = () =>{
+page--
+obtenerPersonajes(page)
+console.log('perdiste 1 dolar')
+}
+
+siguiente.addEventListener('click', nueva)
+anterior.addEventListener('click', antes)
+
+//<p class="card-text"><b>Estado:</b> ${personaje.status==='Alive'? `<span class="alive">${personaje.status}</span>`: `<span class="dead">${personaje.status}</span>`} </p> Esto vendria en lugar de la linea 955 si no usara el if
+
+
+
 
 //CLASE 19
 

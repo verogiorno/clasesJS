@@ -46,3 +46,18 @@ button{
 .btnTest{
 background-color: blueviolet;
 } */
+
+
+/* CLASE 18 */
+
+.dead{
+    color: red;
+}
+
+.alive{
+    color: green;
+}
+
+.unknown{
+    color: yellow;
+}
