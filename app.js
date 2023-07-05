@@ -920,70 +920,70 @@ Las privadas tienen restricciones de acceso, necesitan una key. No podemos obten
 
 */
 
-let lista= document.getElementById('lista')
-let anterior=document.getElementById('anterior')
-let siguiente=document.getElementById('siguiente')
+// let lista= document.getElementById('lista')
+// let anterior=document.getElementById('anterior')
+// let siguiente=document.getElementById('siguiente')
 
 
-const obtenerPersonajes = (page) => {
-    console.log(page)
-fetch(`https://rickandmortyapi.com/api/character/?page=${page}`)
-.then(respuesta=>respuesta.json())
-.then(datos=>mostrarPersonaje(datos.results))
-} //si lo guardo en una función, la ejecuto y controlo la ejecuciónd e la función como quiero
-obtenerPersonajes(page)
+// const obtenerPersonajes = (page) => {
+//     console.log(page)
+// fetch(`https://rickandmortyapi.com/api/character/?page=${page}`)
+// .then(respuesta=>respuesta.json())
+// .then(datos=>mostrarPersonaje(datos.results))
+// } //si lo guardo en una función, la ejecuto y controlo la ejecuciónd e la función como quiero
+// obtenerPersonajes(page)
 
-const mostrarPersonaje = (personajes) => {
-    //console.log(personajes)
-    lista.innerHTML=''
-    let resultado=''
-    for(let personaje of personajes){
-        //console.log(personaje.name)
-        if (personaje.status=== 'Alive'){
-            resultado= `<span class="alive">${personaje.status}</span>`
-        }else if(personaje.status=== 'Dead'){
-            resultado= `<span class="dead">${personaje.status}</span>`
-        }else{
-            resultado= `<span class="unknown">${personaje.status}</span>`
-        }
+// const mostrarPersonaje = (personajes) => {
+//     //console.log(personajes)
+//     lista.innerHTML=''
+//     let resultado=''
+//     for(let personaje of personajes){
+//         //console.log(personaje.name)
+//         if (personaje.status=== 'Alive'){
+//             resultado= `<span class="alive">${personaje.status}</span>`
+//         }else if(personaje.status=== 'Dead'){
+//             resultado= `<span class="dead">${personaje.status}</span>`
+//         }else{
+//             resultado= `<span class="unknown">${personaje.status}</span>`
+//         }
 
 
-        lista.innerHTML+=`<div class="card mb-3" style="max-width: 540px;">
-        <div class="row g-0">
-          <div class="col-md-4">
-            <img src="${personaje.image}" class="img-fluid rounded-start" alt="...">
-          </div>
-          <div class="col-md-8">
-            <div class="card-body">
-              <h5 class="card-title">${personaje.name}</h5>
+//         lista.innerHTML+=`<div class="card mb-3" style="max-width: 540px;">
+//         <div class="row g-0">
+//           <div class="col-md-4">
+//             <img src="${personaje.image}" class="img-fluid rounded-start" alt="...">
+//           </div>
+//           <div class="col-md-8">
+//             <div class="card-body">
+//               <h5 class="card-title">${personaje.name}</h5>
 
-              <p class="card-text"><b>Estado:</b> ${resultado} </p>
+//               <p class="card-text"><b>Estado:</b> ${resultado} </p>
 
-              <p class="card-text"><b>Especie:</b> ${personaje.species} </p>
-              <p class="card-text"><b>Género:</b> ${personaje.gender} </p>
-            </div>
-          </div>
-        </div>
-      </div>`
-    }
-}
+//               <p class="card-text"><b>Especie:</b> ${personaje.species} </p>
+//               <p class="card-text"><b>Género:</b> ${personaje.gender} </p>
+//             </div>
+//           </div>
+//         </div>
+//       </div>`
+//     }
+// }
 
-const nueva = () =>{
-page++
-obtenerPersonajes(page)
-console.log('perdiste 1 dolar')
-}
-                //BASE               ENDPOINT   //condición
-// "https://rickandmortyapi.com/api/character/?page=2"
+// const nueva = () =>{
+// page++
+// obtenerPersonajes(page)
+// console.log('perdiste 1 dolar')
+// }
+//                 //BASE               ENDPOINT   //condición
+// // "https://rickandmortyapi.com/api/character/?page=2"
 
-const antes = () =>{
-page--
-obtenerPersonajes(page)
-console.log('perdiste 1 dolar')
-}
+// const antes = () =>{
+// page--
+// obtenerPersonajes(page)
+// console.log('perdiste 1 dolar')
+// }
 
-siguiente.addEventListener('click', nueva)
-anterior.addEventListener('click', antes)
+// siguiente.addEventListener('click', nueva)
+// anterior.addEventListener('click', antes)
 
 //<p class="card-text"><b>Estado:</b> ${personaje.status==='Alive'? `<span class="alive">${personaje.status}</span>`: `<span class="dead">${personaje.status}</span>`} </p> Esto vendria en lugar de la linea 955 si no usara el if
 
@@ -1036,3 +1036,62 @@ https://blog.nubecolectiva.com/los-5-mejores-frameworks-css-para-desarrolladores
 
 
 //BORRAR CARPETAS QUE NO NECESITAMOS video: 2.07.10
+
+
+// CLASE 21
+
+//PROPS = PROPERTIES
+//Son una herramienta desde la cual vamos a enviar info desde un componente hacia otro componente
+
+// function Card(){
+//     let mivalor=35
+//     return(
+//         <>
+
+//         </>
+//     )
+// }
+
+// export {Card}
+
+
+//Crear una carpeta en SRC llamade Card y agregar un archivo Card.jsx y Card.css
+//Se renderiza en al app.jsx:
+
+// import './App.css'
+// import {Card} from './Components/Card/Card'
+// import {Header} from './Components/Header/Header'
+// import {Footer} from './Components/Footer/Footer'
+
+// function app(){
+//     const usuario={
+//          nombre: 'mario',
+//          apellido: 'lopez',
+//          anios: 25,
+//          LikeCSS: false
+//}
+//     return(
+//         <Header/>
+//         <Card user={usuario}/>
+//         <Footer/>
+//     )
+// }
+
+// export default app
+
+
+//En MediaDeviceInfo.jsx va
+// https://cdn.discordapp.com/attachments/784731978347315260/1126206848354234478/vlc_1E1nb2pB3D.png
+
+//En Card.jsx va 
+// https://cdn.discordapp.com/attachments/784731978347315260/1126209801957949472/image.png
+
+//React no muestra el resultado de los booleanos
+
+/* DESTRUCTURING: hace que la info quede más limpia y visual, fácil de entender.
+ https://cdn.discordapp.com/attachments/784731978347315260/1126210765716738088/image.png
+
+Yo tengo un array de objetos (productos) en app.jsx y quiero llevar esa info a las cards. Lo que hago es hacer un .map en Card.jsx
+
+Cada base de daots que traemos SIEMPRE tiene que tener un ID para diferenciar un elemento de otro
+*/
