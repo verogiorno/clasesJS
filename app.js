@@ -1095,3 +1095,56 @@ Yo tengo un array de objetos (productos) en app.jsx y quiero llevar esa info a l
 
 Cada base de daots que traemos SIEMPRE tiene que tener un ID para diferenciar un elemento de otro
 */
+
+/*
+CLASE 22
+
+
+useState: es un hook (el más usado. También tenemos useEffect, useMain, useMemo,etc) 
+Un hook en react es una fnción especial que permite usar el estado y otras características de React en componentes funcionales.
+useState está declarado como una variable de estado en un cmponente funcional. Esta función devuelve un array con dos elementos (el estado actual) y una función para actualizar ese estado propiamente.
+Para declararlo, hay que hacer un array con dos elementos (uno es el estado actual y el otro una función para actualizar ese estado.)
+EJ:
+https://media.discordapp.net/attachments/784731978347315260/1126573144438751262/image.png
+
+El useState es una forma sencilla de introducir y gestionar el estado del componente en React, permitiendo agregar interactividad y cambios dinámicos a la aplicación.
+
+El valor del useState puede ser string, booleano, números, array
+EJ: https://cdn.discordapp.com/attachments/784731978347315260/1126573821781102654/image.png
+
+El useState funciona como un innerHTML
+
+Para hacer que funcione el contador hay que hacer lo siguiente
+https://cdn.discordapp.com/attachments/784731978347315260/1126574781832118312/image.png (Como el cookie clicker)
+
+En este ejemplo, se crearon dos botones (restar y sumar) y lo programamos para que cuando se llegue a 10, se deshabilite el botón de sumar
+https://cdn.discordapp.com/attachments/784731978347315260/1126577907377111050/image.png
+https://cdn.discordapp.com/attachments/784731978347315260/1126578022762422362/image.png
+
+
+Trivias
+
+https://cdn.discordapp.com/attachments/784731978347315260/1126581969157894206/image.png
+
+Para hacer que solo se muestre una pregunta a la vez:
+https://cdn.discordapp.com/attachments/784731978347315260/1126582445618245649/image.png
+1. Llamo al array de objetos (que contiene las preguntas, opciones y respuestas) me posiciono en el primer elemento (posición 0)
+
+Para hacer le código más limpio usamos el useState
+https://cdn.discordapp.com/attachments/784731978347315260/1126583855302840380/image.png
+Se usa el useState para preguntarle al index, por lo cual hacer preguntaIndex.setPreguntaIndex=useState (0) y le asignamos el valor 0 por lo cual solo muestra lo seleccionado (la pregunta en la posición 0)
+https://cdn.discordapp.com/attachments/784731978347315260/1126584523107340289/image.png
+Y todo lo que está en el cosole.log lo guardo en una variable que se llama pregunta actual para yo saber que estoy mirando la pregunta actual en este momento.
+
+Para mostrar las opciones creamos botones con.map
+https://cdn.discordapp.com/attachments/784731978347315260/1126587760459911168/image.png
+Se crean 1 boton x cada opción que hay gracias al .map
+Cuando hay que romper la estructura del .map y seguir escribiendo código en la líneade abajo, hay que ponerle parentesis al elemento (en esta caso a opción en la linea 47)
+
+Para agregar la respuesta le agregamos un false al useState
+
+https://cdn.discordapp.com/attachments/784731978347315260/1126590659218915378/image.png
+https://cdn.discordapp.com/attachments/784731978347315260/1126591665973502093/image.png
+Le agregamos el btn de la siguiente pregunta
+https://media.discordapp.net/attachments/784731978347315260/1126595391069102240/image.png
+*/
