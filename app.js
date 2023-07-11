@@ -1148,3 +1148,99 @@ https://cdn.discordapp.com/attachments/784731978347315260/1126591665973502093/im
 Le agregamos el btn de la siguiente pregunta
 https://media.discordapp.net/attachments/784731978347315260/1126595391069102240/image.png
 */
+
+
+/* Clase 23
+
+Seguimos con la Trivia
+
+Creamos la función respuesta y le agregamos el onClick al botón de las respuestas
+https://cdn.discordapp.com/attachments/784731978347315260/1128381450358628423/image.png
+
+Para que se visualice en el console.loh la respuesta seleccionada x el usuario, agregamos un string + opción al console.log
+https://media.discordapp.net/attachments/784731978347315260/1128383083029217410/image.png
+Y además hacemos una función anónima para que únicamente nos muestrela respuesta seleccionada x el usuario (de lo contrario te muestra todas las respuestas)
+La función flecha se ejecuta solamente cuando la presionan (x eso muestra solamente la opción seleccionada/presionada)
+
+Ahora, para que una vez que el usuario seleccione una respuesta (sea correcta o no) se tiene que visualizar la RTA correcta. En esta caso, hay que llamar a setMostrarRespuesta y darle un valor True
+https://cdn.discordapp.com/attachments/784731978347315260/1128385405713141810/image.png
+Entonces, la rta correct solo va a apareces después de que el usuario haya seleccionado una rta
+
+Puntaje: Ahora, necesitamos que al contestar bien la pregunta se sumen 5 pts al puntaje 
+
+https://cdn.discordapp.com/attachments/784731978347315260/1128387066275835965/image.png
+Se crea una función flecha (actualizarPuntaje) con un if y se agrega actualizarPuntaje a la función rta. Así dependiendo de la rta del usuario, se le suman 5 pts o no.
+
+React no reconoce el (puntaje++) hay que darle (puntaje+5 o el numero q le querramso sumar)
+
+Ahora, tengo que hacer que el botón Siguiente Pregunta me lleve a la sig preg
+
+Le agregamos un onClick al btn sig preg
+https://cdn.discordapp.com/attachments/784731978347315260/1128389923314081935/image.png
+Y llamamos a la función 
+https://media.discordapp.net/attachments/784731978347315260/1128389376406212638/image.png
+
+El problema es que cuando pasamos a la siguiente pregunta, la rta se puede visualizar. Por lo que hay que hacer lo siguiente:
+https://cdn.discordapp.com/attachments/784731978347315260/1128395151023280248/image.png
+Darle false a setMostrarRespuesta
+
+Finalmente, tenemos que deshabilitar el btn de siguien rta. Lo desabilitamos con un corto circuito. (lo que en mi opinión habría que hacer para todas las preguntas. O sea, habilitar el btn sig rta después de que el usuario seleccionó una rta)
+
+FORMULARIO (hecho con boostrap)
+
+Creamos un formulario
+https://cdn.discordapp.com/attachments/784731978347315260/1128410431623536730/image.png
+Y ahora tenemos que hacer que lo que escribe el usuario se guarde. Para eso usamos UseState (en vez de hacer funciones)
+https://cdn.discordapp.com/attachments/784731978347315260/1128411663985553480/image.png
+https://cdn.discordapp.com/attachments/784731978347315260/1128411849956786197/image.png
+con el onClick hacemos que cuando la persona presione en enviar, se envién lso datos
+https://cdn.discordapp.com/attachments/784731978347315260/1128412222176104498/image.png
+Despues vamos al sector de las funciones y hacemos lo siguiente
+https://cdn.discordapp.com/attachments/784731978347315260/1128412783319449710/image.png
+El event es un parametro propiamente de los eventos y se lo conoce como event o la letra e
+El parametro event tiene una propiedad que tiene que ver con lo siguiente:
+Hay que parar ese proceso natural que tiene el event y cualquier formulario que hace que cuando presiono el boton enviar, se actualiza la pagina. Para eso paramos ese proceso nativo agregando el preventDefault.
+https://cdn.discordapp.com/attachments/784731978347315260/1128414177388675132/image.png
+Ahora la pagina no se actualiza cuando tocamos el btn, y al no pasar esto, se ejecuta el console.log que tenemos de ese event.
+Lo que queremos hacer es que en vez de enviarse los datos (nombre, email del usuario) de una, que primero sean analizados para saber que información colocó la persona.
+
+El value='' es un valor fijo, seteado x default. No se puede modificar, borrar, sobreescribir.
+El evento onChange se utiliza para los formularios, controla lo que el usuario agrega. Detecta y maneja cambios en sus valores. Se utiliza, principalmente, en lso componentes de entrada de formularios (input, textarea, textselect. El buscador es un input, la unica diferencia es si se van a utilizar datos sensibles o no. Si se usan datos sensibles, se debe usar un formulario.)
+https://cdn.discordapp.com/attachments/784731978347315260/1128449636995186759/image.png
+Target es una propiedad.
+https://cdn.discordapp.com/attachments/784731978347315260/1128450686795911318/image.png
+Le agregamos setNombre
+https://cdn.discordapp.com/attachments/784731978347315260/1128451198614253638/image.png
+Hacemos lo mismo con email y dirección
+https://media.discordapp.net/attachments/784731978347315260/1128453159363280977/image.png?width=482&height=473
+Para que el usuario visualize los datos que colocó hacemos lo siguiente:
+https://cdn.discordapp.com/attachments/784731978347315260/1128454435257995274/image.png
+Pero como sólo queremos que se visualize despues de q el usuario enció los datos lo q hacemos es lo sigueinte:
+Vamos al sector de useState y creamos uno nuevo:
+https://cdn.discordapp.com/attachments/784731978347315260/1128455277281300560/image.png
+Y para que funcione hacemos:
+https://cdn.discordapp.com/attachments/784731978347315260/1128455674137956382/image.png
+Para que funcione, hay que agregar todo lo de este div entre {} ya que al agregarlas, le estoy diciendo que voy a interpolar JS..
+https://cdn.discordapp.com/attachments/784731978347315260/1128456199650689075/image.png
+...por lo cual necesito tener la variable mostrarValores. Usamos el corto circuito
+https://cdn.discordapp.com/attachments/784731978347315260/1128456724492324954/image.png
+
+Para agregar una passwords
+https://cdn.discordapp.com/attachments/784731978347315260/1128458186911907900/image.png
+Para que se visualize la pw, le agregamos un boton "mostrar pw". Para eso agregamos un evento onClick en mostrar pw
+https://cdn.discordapp.com/attachments/784731978347315260/1128458823082979408/image.png
+Ahora, usamos un ternario
+https://media.discordapp.net/attachments/784731978347315260/1128461176897024050/image.png
+creamos la variable 
+https://cdn.discordapp.com/attachments/784731978347315260/1128460346009583656/image.png
+setMirarPassword
+https://cdn.discordapp.com/attachments/784731978347315260/1128462682643763352/image.png
+le agregamos el preventDefault para q funcione
+https://cdn.discordapp.com/attachments/784731978347315260/1128463254851682305/image.png
+El problema es que solo funciona una vez, xq si volvemos a tocar el btn mostrar pw no se oculta la pw. Lo solucionamos haciendo lo siguiente:
+https://cdn.discordapp.com/attachments/784731978347315260/1128465167097790586/image.png
+Ahora, para que el texto del botón cambie de mostrar a ocultar, usamos un ternario en el boton
+https://cdn.discordapp.com/attachments/784731978347315260/1128466344464101396/image.png
+
+MODO OSCURO CON useState 2:18:00 (video)
+*/
